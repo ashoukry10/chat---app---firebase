@@ -1,0 +1,227 @@
+<html>
+<head>
+<title>main.dart</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<style type="text/css">
+.s0 { color: #a9b7c6;}
+.s1 { color: #6a8759;}
+.s2 { color: #cc7832;}
+.s3 { color: #6897bb;}
+</style>
+</head>
+<body bgcolor="#2b2b2b">
+<table CELLSPACING=0 CELLPADDING=5 COLS=1 WIDTH="100%" BGCOLOR="#606060" >
+<tr><td><center>
+<font face="Arial, Helvetica" color="#000000">
+main.dart</font>
+</center></td></tr></table>
+<pre><span class="s0">import </span><span class="s1">'package:flutter/cupertino.dart'</span><span class="s2">;</span>
+<span class="s0">import </span><span class="s1">'package:flutter/material.dart'</span><span class="s2">;</span>
+
+<span class="s2">void </span><span class="s0">main() {</span>
+  <span class="s0">runApp(pointsCount())</span><span class="s2">;</span>
+<span class="s0">}</span>
+
+<span class="s2">class </span><span class="s0">pointsCount </span><span class="s2">extends </span><span class="s0">StatefulWidget {</span>
+  <span class="s0">@override</span>
+  <span class="s0">State&lt;pointsCount&gt; createState() =&gt; _pointsCountState()</span><span class="s2">;</span>
+<span class="s0">}</span>
+
+<span class="s2">class </span><span class="s0">_pointsCountState </span><span class="s2">extends </span><span class="s0">State&lt;pointsCount&gt; {</span>
+ <span class="s0">int teamAPoints=</span><span class="s3">0</span><span class="s2">;</span>
+ <span class="s0">int teamBPoints=</span><span class="s3">0</span><span class="s2">;</span>
+
+  <span class="s0">@override</span>
+  <span class="s0">Widget build(BuildContext context) {</span>
+    <span class="s2">return </span><span class="s0">MaterialApp(</span>
+      <span class="s0">debugShowCheckedModeBanner: </span><span class="s2">false,</span>
+      <span class="s0">home: Scaffold(</span>
+        <span class="s0">appBar: AppBar(</span>
+          <span class="s0">title: Text(</span><span class="s1">'Points Counter'</span><span class="s0">)</span><span class="s2">,</span>
+          <span class="s0">backgroundColor: Colors.teal</span><span class="s2">,</span>
+        <span class="s0">)</span><span class="s2">,</span>
+        <span class="s0">body: Column(</span>
+          <span class="s0">mainAxisAlignment: MainAxisAlignment.spaceEvenly</span><span class="s2">,</span>
+          <span class="s0">children: [</span>
+            <span class="s0">Row(</span>
+              <span class="s0">mainAxisAlignment: MainAxisAlignment.spaceEvenly</span><span class="s2">,</span>
+              <span class="s0">children: [</span>
+                <span class="s0">Container(</span>
+                  <span class="s0">height: </span><span class="s3">500</span><span class="s2">,</span>
+                  <span class="s0">child: Column(</span>
+                    <span class="s0">mainAxisAlignment: MainAxisAlignment.spaceEvenly</span><span class="s2">,</span>
+                    <span class="s0">children: [</span>
+                      <span class="s2">const </span><span class="s0">Text(</span>
+                        <span class="s1">'Team A'</span><span class="s2">,</span>
+                        <span class="s0">style: TextStyle(</span>
+                          <span class="s0">fontSize: </span><span class="s3">30.0</span><span class="s2">,</span>
+                        <span class="s0">)</span><span class="s2">,</span>
+                      <span class="s0">)</span><span class="s2">,</span>
+                       <span class="s0">Text(</span>
+                        <span class="s1">'</span><span class="s0">$teamAPoints</span><span class="s1">'</span><span class="s2">,</span>
+                        <span class="s0">style: TextStyle(</span>
+                          <span class="s0">fontSize: </span><span class="s3">100.0</span><span class="s2">,</span>
+                        <span class="s0">)</span><span class="s2">,</span>
+                      <span class="s0">)</span><span class="s2">,</span>
+                      <span class="s0">ElevatedButton(</span>
+                        <span class="s0">style: ElevatedButton.styleFrom(</span>
+                          <span class="s0">primary: Colors.teal</span><span class="s2">,</span>
+                          <span class="s0">minimumSize: Size(</span><span class="s3">140</span><span class="s2">, </span><span class="s3">50</span><span class="s0">)</span><span class="s2">,</span>
+                        <span class="s0">)</span><span class="s2">,</span>
+                        <span class="s0">onPressed: (){</span>
+                          <span class="s0">setState(() {</span>
+                            <span class="s0">teamAPoints++</span><span class="s2">;</span>
+                          <span class="s0">})</span><span class="s2">;</span>
+                        <span class="s0">}</span><span class="s2">,</span>
+                        <span class="s0">child: Text(</span>
+                          <span class="s1">'Add 1 Points'</span><span class="s2">,</span>
+                          <span class="s0">style: TextStyle(</span>
+                            <span class="s0">color: Colors.white</span><span class="s2">,</span>
+                          <span class="s0">)</span><span class="s2">,</span>
+                        <span class="s0">)</span><span class="s2">,</span>
+                      <span class="s0">)</span><span class="s2">,</span>
+                      <span class="s0">ElevatedButton(</span>
+                        <span class="s0">style: ElevatedButton.styleFrom(</span>
+                          <span class="s0">primary: Colors.teal</span><span class="s2">,</span>
+                          <span class="s0">minimumSize: Size(</span><span class="s3">140</span><span class="s2">, </span><span class="s3">50</span><span class="s0">)</span><span class="s2">,</span>
+                        <span class="s0">)</span><span class="s2">,</span>
+                        <span class="s0">onPressed: () {</span>
+                          <span class="s0">setState(() {</span>
+                            <span class="s0">teamAPoints=teamAPoints+</span><span class="s3">2</span><span class="s2">;</span>
+                          <span class="s0">})</span><span class="s2">;</span>
+                        <span class="s0">}</span><span class="s2">,</span>
+                        <span class="s0">child: Text(</span>
+                          <span class="s1">'Add 2 Points'</span><span class="s2">,</span>
+                          <span class="s0">style: TextStyle(</span>
+                            <span class="s0">color: Colors.white</span><span class="s2">,</span>
+                          <span class="s0">)</span><span class="s2">,</span>
+                        <span class="s0">)</span><span class="s2">,</span>
+                      <span class="s0">)</span><span class="s2">,</span>
+                      <span class="s0">ElevatedButton(</span>
+                        <span class="s0">style: ElevatedButton.styleFrom(</span>
+                          <span class="s0">primary: Colors.teal</span><span class="s2">,</span>
+                          <span class="s0">minimumSize: Size(</span><span class="s3">140</span><span class="s2">, </span><span class="s3">50</span><span class="s0">)</span><span class="s2">,</span>
+                        <span class="s0">)</span><span class="s2">,</span>
+                        <span class="s0">onPressed: () {</span>
+                          <span class="s0">setState(() {</span>
+                            <span class="s0">teamAPoints+=</span><span class="s3">3</span><span class="s2">;</span>
+                          <span class="s0">})</span><span class="s2">;</span>
+                        <span class="s0">}</span><span class="s2">,</span>
+                        <span class="s0">child: Text(</span>
+                          <span class="s1">'Add 3 Points'</span><span class="s2">,</span>
+                          <span class="s0">style: TextStyle(</span>
+                            <span class="s0">color: Colors.white</span><span class="s2">,</span>
+                          <span class="s0">)</span><span class="s2">,</span>
+                        <span class="s0">)</span><span class="s2">,</span>
+                      <span class="s0">)</span><span class="s2">,</span>
+                    <span class="s0">]</span><span class="s2">,</span>
+                  <span class="s0">)</span><span class="s2">,</span>
+                <span class="s0">)</span><span class="s2">,</span>
+                <span class="s0">Container(</span>
+                  <span class="s0">height: </span><span class="s3">500</span><span class="s2">,</span>
+                  <span class="s0">child: VerticalDivider(</span>
+                    <span class="s0">thickness: </span><span class="s3">2</span><span class="s2">,</span>
+                    <span class="s0">indent: </span><span class="s3">40</span><span class="s2">,</span>
+                    <span class="s0">endIndent: </span><span class="s3">30</span><span class="s2">,</span>
+                  <span class="s0">)</span><span class="s2">,</span>
+                <span class="s0">)</span><span class="s2">,</span>
+                <span class="s0">Container(</span>
+                  <span class="s0">height: </span><span class="s3">500</span><span class="s2">,</span>
+                  <span class="s0">child: Column(</span>
+                    <span class="s0">mainAxisAlignment: MainAxisAlignment.spaceEvenly</span><span class="s2">,</span>
+                    <span class="s0">children: [</span>
+                      <span class="s2">const </span><span class="s0">Text(</span>
+                        <span class="s1">'Team B'</span><span class="s2">,</span>
+                        <span class="s0">style: TextStyle(</span>
+                          <span class="s0">fontSize: </span><span class="s3">30.0</span><span class="s2">,</span>
+                        <span class="s0">)</span><span class="s2">,</span>
+                      <span class="s0">)</span><span class="s2">,</span>
+                       <span class="s0">Text(</span>
+                        <span class="s1">'</span><span class="s0">$teamBPoints</span><span class="s1">'</span><span class="s2">,</span>
+                        <span class="s0">style: TextStyle(</span>
+                          <span class="s0">fontSize: </span><span class="s3">100.0</span><span class="s2">,</span>
+                        <span class="s0">)</span><span class="s2">,</span>
+                      <span class="s0">)</span><span class="s2">,</span>
+                      <span class="s0">ElevatedButton(</span>
+                        <span class="s0">style: ElevatedButton.styleFrom(</span>
+                          <span class="s0">primary: Colors.teal</span><span class="s2">,</span>
+                          <span class="s0">minimumSize: Size(</span><span class="s3">140</span><span class="s2">, </span><span class="s3">50</span><span class="s0">)</span><span class="s2">,</span>
+                        <span class="s0">)</span><span class="s2">,</span>
+                        <span class="s0">onPressed: () {</span>
+                          <span class="s0">setState(() {</span>
+                            <span class="s0">teamBPoints++</span><span class="s2">;</span>
+                          <span class="s0">})</span><span class="s2">;</span>
+                        <span class="s0">}</span><span class="s2">,</span>
+                        <span class="s0">child: Text(</span>
+                          <span class="s1">'Add 1 Points'</span><span class="s2">,</span>
+                          <span class="s0">style: TextStyle(</span>
+                            <span class="s0">color: Colors.white</span><span class="s2">,</span>
+                          <span class="s0">)</span><span class="s2">,</span>
+                        <span class="s0">)</span><span class="s2">,</span>
+                      <span class="s0">)</span><span class="s2">,</span>
+                      <span class="s0">ElevatedButton(</span>
+                        <span class="s0">style: ElevatedButton.styleFrom(</span>
+                          <span class="s0">primary: Colors.teal</span><span class="s2">,</span>
+                          <span class="s0">minimumSize: Size(</span><span class="s3">140</span><span class="s2">, </span><span class="s3">50</span><span class="s0">)</span><span class="s2">,</span>
+                        <span class="s0">)</span><span class="s2">,</span>
+                        <span class="s0">onPressed: () {</span>
+                          <span class="s0">setState(() {</span>
+                            <span class="s0">teamBPoints+=</span><span class="s3">2</span><span class="s2">;</span>
+                          <span class="s0">})</span><span class="s2">;</span>
+                        <span class="s0">}</span><span class="s2">,</span>
+                        <span class="s0">child: Text(</span>
+                          <span class="s1">'Add 2 Points'</span><span class="s2">,</span>
+                          <span class="s0">style: TextStyle(</span>
+                            <span class="s0">color: Colors.white</span><span class="s2">,</span>
+                          <span class="s0">)</span><span class="s2">,</span>
+                        <span class="s0">)</span><span class="s2">,</span>
+                      <span class="s0">)</span><span class="s2">,</span>
+                      <span class="s0">ElevatedButton(</span>
+                        <span class="s0">style: ElevatedButton.styleFrom(</span>
+                          <span class="s0">primary: Colors.teal</span><span class="s2">,</span>
+                          <span class="s0">minimumSize: Size(</span><span class="s3">140</span><span class="s2">, </span><span class="s3">50</span><span class="s0">)</span><span class="s2">,</span>
+                        <span class="s0">)</span><span class="s2">,</span>
+                        <span class="s0">onPressed: () {</span>
+                          <span class="s0">setState(() {</span>
+                            <span class="s0">teamBPoints+=</span><span class="s3">3</span><span class="s2">;</span>
+                          <span class="s0">})</span><span class="s2">;</span>
+                        <span class="s0">}</span><span class="s2">,</span>
+                        <span class="s0">child: Text(</span>
+                          <span class="s1">'Add 3 Points'</span><span class="s2">,</span>
+                          <span class="s0">style: TextStyle(</span>
+                            <span class="s0">color: Colors.white</span><span class="s2">,</span>
+                          <span class="s0">)</span><span class="s2">,</span>
+                        <span class="s0">)</span><span class="s2">,</span>
+                      <span class="s0">)</span><span class="s2">,</span>
+                    <span class="s0">]</span><span class="s2">,</span>
+                  <span class="s0">)</span><span class="s2">,</span>
+                <span class="s0">)</span><span class="s2">,</span>
+              <span class="s0">]</span><span class="s2">,</span>
+            <span class="s0">)</span><span class="s2">,</span>
+            <span class="s0">ElevatedButton(</span>
+              <span class="s0">style: ElevatedButton.styleFrom(</span>
+                <span class="s0">primary: Colors.teal</span><span class="s2">,</span>
+                <span class="s0">minimumSize: Size(</span><span class="s3">140</span><span class="s2">, </span><span class="s3">50</span><span class="s0">)</span><span class="s2">,</span>
+              <span class="s0">)</span><span class="s2">,</span>
+              <span class="s0">onPressed: () {</span>
+                <span class="s0">setState(() {</span>
+                  <span class="s0">teamAPoints=</span><span class="s3">0</span><span class="s2">;</span>
+                  <span class="s0">teamBPoints=</span><span class="s3">0</span><span class="s2">;</span>
+                <span class="s0">})</span><span class="s2">;</span>
+              <span class="s0">}</span><span class="s2">,</span>
+              <span class="s0">child: Text(</span>
+                <span class="s1">'Reset'</span><span class="s2">,</span>
+                <span class="s0">style: TextStyle(</span>
+                  <span class="s0">color: Colors.white</span><span class="s2">,</span>
+                <span class="s0">)</span><span class="s2">,</span>
+              <span class="s0">)</span><span class="s2">,</span>
+            <span class="s0">)</span><span class="s2">,</span>
+          <span class="s0">]</span><span class="s2">,</span>
+        <span class="s0">)</span><span class="s2">,</span>
+      <span class="s0">)</span><span class="s2">,</span>
+    <span class="s0">)</span><span class="s2">;</span>
+  <span class="s0">}</span>
+<span class="s0">}</span>
+</pre>
+</body>
+</html>
